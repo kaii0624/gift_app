@@ -48,11 +48,6 @@ if 'running' not in st.session_state:
     st.session_state['running'] = False
     st.session_state['fig'] = plot_colored_rectangles_with_image()
 
-# スタートとストップのボタン
-# ボタン用の画像をロードする
-start_button_image = Image.open('data/start.png')
-stop_button_image = Image.open('data/stop.png')
-
 col1, col2 = st.columns(2)
 with col1:
     if st.button('スタート'):
