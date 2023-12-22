@@ -33,6 +33,7 @@ placeholder = st.empty()
 
 # 四角形をプロットし、PNG画像を重ねる関数を定義する
 def plot_colored_rectangles_with_image(colors):
+    plt.close('all')
     fig, ax = plt.subplots(figsize=(6, 2))
 
     for i, color in enumerate(reversed(colors)):
@@ -112,11 +113,7 @@ while True:
         st.session_state['current_color_index'] += 1
         if st.session_state['current_color_index'] > (len(all_colors) - 3):
             st.session_state['current_color_index'] = 0
-        
-        # 図をプロット
-        st.session_state['fig'] = plot_colored_rectangles_with_image(colors)
-        placeholder.pyplot(st.session_state['fig'])
-        
+
     elif st.session_state['running']=="STOP":
         if 18 <= time.localtime().tm_hour < 24:
             colors = [
