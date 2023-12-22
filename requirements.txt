@@ -4,3 +4,4 @@ datetime
 matplotlib
 numpy 
 Pillow
+streamlit-image-select
