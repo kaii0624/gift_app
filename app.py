@@ -101,7 +101,7 @@ with col3:
 
 while True:
     if st.session_state['running'] == "START":
-        time.sleep(0.5)
+        time.sleep(0.6)
         plt.close(st.session_state.get('fig', plt.figure()))
 
         # 現在の色を選択
@@ -126,6 +126,5 @@ while True:
     
     st.session_state['fig'] = plot_colored_rectangles_with_image(colors)
     placeholder.pyplot(st.session_state['fig'])
-    st.write(time.localtime().tm_hour)
     
     
