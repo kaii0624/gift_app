@@ -41,7 +41,6 @@ def plot_colored_rectangles_with_image(colors):
         # rect = Rectangle((len(colors) - i, 0), 1, 1, facecolor=color)
         ax.add_patch(rect)
 
-
     image_array = np.array(image)
     im = OffsetImage(image_array, zoom=0.65)  # 必要に応じてズームを調整
     ab = AnnotationBbox(im, (2.5, 0.52), frameon=False, box_alignment=(0.5,0.5))
@@ -61,7 +60,6 @@ if 'buttons_visible' not in st.session_state:
     st.session_state['buttons_visible'] = True
 if 'running' not in st.session_state:
     st.session_state['running'] = "init"
-#     st.session_state['fig'] = plot_colored_rectangles_with_image(colors = colors_init) 
 
 st.markdown("""
     <style>
@@ -115,7 +113,7 @@ while True:
             st.session_state['current_color_index'] = 0
 
     elif st.session_state['running']=="STOP":
-        if 18 <= time.localtime().tm_hour < 24:
+        if 18 <= (time.localtime().tm_hour + 9) % 24 < 24:
             colors = [
                 (149/255, 130/255, 114/255),  # rgb(149, 130, 114)
                 (176/255, 159/255, 143/255),  # rgb(176, 159, 143)
